@@ -1,6 +1,5 @@
 "use client";
 import SignIn from "@/components/SignIn";
-import Image from "next/image";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 

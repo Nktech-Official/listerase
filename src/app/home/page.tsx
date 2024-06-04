@@ -9,15 +9,13 @@ import TodoList from "@/components/TodoList";
 export default function Home() {
   const [user] = useAuthState(auth);
   const router = useRouter();
-  const userSession = sessionStorage.getItem("user");
 
   useEffect(() => {
-    if (!user && !userSession) router.push("/");
-  }, [router, user, userSession]);
+    const userSession = sessionStorage.getItem("user");
 
-  if (!user && !userSession) {
-    router.push("/");
-  }
+    if (!user && !userSession) router.push("/");
+  }, [router, user]);
+
   return (
     <div>
       <TodoForm user={user} />
